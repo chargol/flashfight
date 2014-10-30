@@ -132,4 +132,4 @@ gulp.task('watch-js', function() {
 *
 **/
 
-gulp.task('default', ['css', 'js', 'watch-sass', 'watch-js']);
+gulp.task('default', ['css', 'watch-sass']);
