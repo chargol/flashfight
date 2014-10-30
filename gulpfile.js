@@ -14,6 +14,8 @@ var prefixer = require('gulp-autoprefixer');
 *
 **/
 
+var bowerDir = "app/assets/bower_components";
+
 var sassDir = 'app/assets/sass';
 var targetCSSDir = 'public/css';
 var sassCacheLocation = '/app/assets/sass/.sass-cache';
@@ -48,7 +50,7 @@ gulp.task('css', function() {
 *
 **/
 
-gulp.task('js', []);
+// gulp.task('js', []);
 
 // gulp.task('task', function() {
 // 	return gulp.src(jsDir + '/file.js')
@@ -56,6 +58,59 @@ gulp.task('js', []);
 // 		gulp.dest(targetJSDir)
 // 	);
 // });
+// 
+
+/**
+*
+* LIBRARIES
+*
+**/
+
+gulp.task('libs', ['jquery', 'bootstrap']);
+
+// Library jQuery
+gulp.task('jquery', function() {
+	gulp.src(
+		bowerDir + '/jquery/dist/jquery.min.js'
+	).pipe(
+		gulp.dest(targetJSDir)
+	);
+
+	gulp.src(
+		bowerDir + '/jquery/dist/jquery.min.map'
+	).pipe(
+		gulp.dest(targetJSDir)
+	);
+});
+
+// Library Twitter Bootstrap
+gulp.task('bootstrap', function() {
+	gulp.src(
+		bowerDir + '/bootstrap/dist/js/bootstrap.min.js'
+	).pipe(
+		gulp.dest(targetJSDir)
+	);
+
+	gulp.src(
+		bowerDir + '/bootstrap/dist/css/bootstrap.min.css'
+	).pipe(
+		gulp.dest(targetCSSDir)
+	);
+
+	gulp.src(
+		bowerDir + '/bootstrap/dist/css/bootstrap.css.map'
+	).pipe(
+		gulp.dest(targetCSSDir)
+	);
+
+	gulp.src(
+		bowerDir + '/bootstrap/dist/fonts/*'
+	).pipe(
+		gulp.dest('public/fonts')
+	);
+
+});
+
 
 /**
 *

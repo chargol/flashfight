@@ -6,3 +6,5 @@ composer.phar
 .DS_Store
 Thumbs.db
 /node_modules
+/app/assets/bower_components
+/app/assets/sass/.sass-cache
