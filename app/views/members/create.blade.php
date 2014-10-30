@@ -10,12 +10,15 @@
 
 				{{ Form::open() }}
 					<div class="form-group">
-						{{ Form::text('firstname', '', ['placesholder' => 'Vorname']) }}
-						{{ Form::text('lastname', '', ['placesholder' => 'Nachname']) }}
+						{{ Form::text('firstname', '', ['placesholder' => 'Vorname', 'class' => 'form-control']) }}
 					</div>
 
 					<div class="form-group">
-						{{ Form::text('birthday', '', ['placesholder' => 'Geburtsdatum']) }}
+						{{ Form::text('lastname', '', ['placesholder' => 'Nachname', 'class' => 'form-control']) }}
+					</div>
+
+					<div class="form-group">
+						{{ Form::text('birthday', '', ['placesholder' => 'Geburtsdatum', 'class' => 'form-control']) }}
 					</div>
 
 					<div class="form-group">
