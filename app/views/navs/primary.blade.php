@@ -8,7 +8,7 @@
 </div>
 
 <!-- Primary navigation -->
-<section id="nav-primary" >
+<section id="nav-primary" class="nav-hide" >
 	
 	<ul class="nav-content-wrapper text-center">
 		<li>

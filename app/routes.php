@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('layouts.skeleton');
-});
+Route::get('/', array(
+	'as' => 'home',
+	'uses' => 'MemberController@create'
+));
