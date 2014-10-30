@@ -50,15 +50,15 @@ gulp.task('css', function() {
 *
 **/
 
-// gulp.task('js', []);
+gulp.task('js', ['nav-js']);
 
-// gulp.task('task', function() {
-// 	return gulp.src(jsDir + '/file.js')
-// 	.pipe(
-// 		gulp.dest(targetJSDir)
-// 	);
-// });
-// 
+gulp.task('nav-js', function() {
+	return gulp.src(jsDir + '/nav.js')
+	.pipe(
+		gulp.dest(targetJSDir)
+	);
+});
+
 
 /**
 *
@@ -66,7 +66,7 @@ gulp.task('css', function() {
 *
 **/
 
-gulp.task('libs', ['jquery', 'bootstrap']);
+gulp.task('libs', ['jquery', 'bootstrap', 'animate-css']);
 
 // Library jQuery
 gulp.task('jquery', function() {
@@ -80,6 +80,15 @@ gulp.task('jquery', function() {
 		bowerDir + '/jquery/dist/jquery.min.map'
 	).pipe(
 		gulp.dest(targetJSDir)
+	);
+});
+
+// Animate CSS
+gulp.task('animate-css', function() {
+	gulp.src(
+		bowerDir + '/animate.css/animate.min.css'
+	).pipe(
+		gulp.dest(targetCSSDir)
 	);
 });
 
@@ -132,4 +141,4 @@ gulp.task('watch-js', function() {
 *
 **/
 
-gulp.task('default', ['css', 'watch-sass']);
+gulp.task('default', ['css', 'js', 'watch-sass', 'watch-js']);

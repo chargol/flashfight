@@ -1,0 +1,102 @@
+
+// Component-Variables
+$clNavBgr: rgb(0,0,0);
+
+.nav-show-btn {
+	position: absolute;
+	top: 20px; right: 30px;
+
+	a {
+		display: block;
+		width: 60px;
+		height: 60px;
+
+		padding: 18px 15px;
+
+		border-radius: 30px;
+		
+		background-color: $clPaper;
+
+		.icon-bar {
+			display: block;
+
+			margin-bottom: 5px;
+			
+			height: 4px;
+			width: 100%;
+
+			border-radius: 2px;
+
+			background-color: $clSecondary;
+		}
+
+		&:hover { 
+			.icon-bar { background-color: $clPaper; }
+			background-color: $clSecondary; 
+		}
+	}
+}
+
+#nav-primary {
+	position: absolute;
+	top:0; right: 0; bottom: 0; left:0;
+
+	z-index: 999;
+
+	background-color: rgba($clNavBgr, 0.8);
+
+	.nav-content-wrapper {
+		margin: 200px auto;
+		width: 600px;
+		li {
+			
+			list-style: none;
+			border-bottom: 1px solid $clPaper;
+
+			a {
+				display: block;
+				padding: 30px 0;
+
+				color: $clPaper;
+				text-transform: uppercase;
+				font-family: $fontFamily;
+				font-weight: 100;
+				font-size: 40px;
+				letterspacing: 1px;
+
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					text-decoration: none;
+					background-color: rgba($clSecondary, 0.5);
+				}
+
+				.glyphicon {
+					margin-right: 10px;
+				}
+				
+			}
+		}
+	}
+
+	.nav-close-btn {
+		position: absolute;
+		top: 15px;
+		right: 31px;
+
+		a {
+			color: $clPaper;
+			font-size: 60px;
+
+			&:hover { .glyphicon { color: $clSecondary; } }
+		}
+	}
+
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-hide {
+	opacity: 0;
+	pointer-events: none;
+}
+
