@@ -18,6 +18,7 @@ class CreateMembersTable extends Migration {
 			
 			$table->string('firstname', 120);
 			$table->string('lastname', 120);
+			$table->char('gender', 1);
 			$table->date('birthday');
 
 			$table->timestamps();
