@@ -1,0 +1,43 @@
+.row-member {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	color: $clPaper;
+	letter-spacing: 1px;
+	font-weight: 100;
+
+	border-bottom: 1px solid $clPaper;
+
+	&:hover {
+		background-color: darken($clPrimary, 5);
+	}
+
+	.points {
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.input-points {
+		display: inline-block;
+		width: 80px;
+		height: auto;
+		
+		color: $clPrimary;
+		font-weight: normal;
+
+		padding: 1px 4px;
+
+		border: 1px solid $clPaper;
+		border-radius: 15px;
+		background-color: $clPaper;
+
+		font-size: 14px;
+
+		&:focus {
+			color: $clPrimary;
+			border-color: $clSecondary;
+			background-color: $clPaper;
+		}
+
+	}
+}

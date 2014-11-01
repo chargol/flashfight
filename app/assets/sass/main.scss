@@ -1,8 +1,17 @@
-
+html, body {
+	height: 100%;
+}
 
 @import 'base/variables';
 
 @import 'objects/body';
+@import 'objects/typography';
+@import 'objects/btn';
 @import 'objects/inputs';
+@import 'objects/alerts';
+@import 'objects/head-icon';
 
 @import 'components/navs';
+@import 'components/form-create-member';
+@import 'components/info-panel-create-member';
+@import 'components/row-member';

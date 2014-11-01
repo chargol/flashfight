@@ -11,7 +11,32 @@
 |
 */
 
+Route::get('/punkte/nullen/{id}', array(
+	'as' => 'point.destroy',
+	'uses' => 'PointController@destroy'
+));
+
+Route::post('/punkte/vergeben/{id}', array(
+	'as' => 'point.create',
+	'uses' => 'PointController@create' 
+));
+
+Route::get('/punkte/vergeben', array(
+	'as' => 'point.index',
+	'uses' => 'PointController@index' 
+));
+
+Route::delete('/teilnehmer/{id}', array(
+	'as' => 'member.destroy',
+	'uses' => 'MemberController@destroy' 
+));
+
+Route::post('/teilnehmer', array(
+	'as' => 'member.store',
+	'uses' => 'memberController@store' 
+));
+
 Route::get('/', array(
-	'as' => 'home',
+	'as' => 'member.create',
 	'uses' => 'MemberController@create'
 ));

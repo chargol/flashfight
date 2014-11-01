@@ -11,6 +11,7 @@
 <body>
 
 	@include('navs.primary')
+	@include('flash::message')
 	
 	@yield('skeleton.content')
 
@@ -18,5 +19,10 @@
 	{{ HTML::script('js/jquery.min.js') }}
 	{{ HTML::script('js/bootstrap.min.js') }}
 	{{ HTML::script('js/nav.js') }}
+
+	<script>
+	    $('#flash-overlay-modal').modal();
+	</script>
+
 </body>
 </html>

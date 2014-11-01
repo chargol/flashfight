@@ -1,0 +1,15 @@
+h2 {
+	padding: 10px 20px;
+	margin-bottom: 50px;
+
+	color: $clPrimary;
+	font-weight: 100;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	border-radius: 15px;
+	background-color: $clPaper;
+
+	small { color: $clPrimary; }
+
+}

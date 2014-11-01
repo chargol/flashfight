@@ -1,6 +1,20 @@
 <?php
 
+use Carbon\Carbon;
+use Flashfight\Forms\Member as MemberForm;
+
 class MemberController extends \BaseController {
+
+	protected $memberForm;
+
+	/**
+	 * DI
+	 * @param MemberForm $memberForm [description]
+	 */
+	public function __construct(MemberForm $memberForm) 
+	{
+		$this->memberForm = $memberForm;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -20,7 +34,10 @@ class MemberController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('members.create');
+		$lastMembers = Member::orderBy('created_at', 'desc')->take(5)->get();
+		$countMembers = Member::all()->count();
+
+		return View::make('members.create', compact('lastMembers', 'countMembers'));
 	}
 
 
@@ -30,8 +47,27 @@ class MemberController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//
+	{	
+		$birthdayArray = explode('.', Input::get('birthday'));
+
+		if (count($birthdayArray) == 3) {
+			$parsedInput = [
+				'firstname' => Input::get('firstname'),
+				'lastname' => Input::get('lastname'),
+				'gender' => Input::get('gender'),
+				'birthday' => $birthdayArray[2] .'-'. $birthdayArray[1] .'-'. $birthdayArray[0]
+			];
+		} else {
+			Flash::error('Fehlerhafte Daten.');
+			return Redirect::back()->withInput();
+		}
+
+		$this->memberForm->validate($parsedInput);
+
+		$member = Member::create($parsedInput);
+
+		Flash::success('Neuer Teilnehmer <strong>' . $member->name() .' (#'. $member->id .')</strong> wurde angemeldet.');
+		return Redirect::back();
 	}
 
 
@@ -79,7 +115,10 @@ class MemberController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		Member::find($id)->delete();
+
+		Flash::warning('Teilnehmer wurde gelöscht.');
+		return Redirect::back();
 	}
 
 

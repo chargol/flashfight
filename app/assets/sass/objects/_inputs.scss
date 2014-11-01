@@ -1,3 +1,42 @@
 input[type="text"] {
 	
+	height: 50px;
+
+	color: $clPaper;
+
+	font-size: 30px;
+	line-height: 125%;
+	font-weight: 100;
+	letter-spacing: 1px;
+
+	border: 0px;
+	border-bottom: 1px solid $clPaper;
+	border-radius: 0;
+
+	box-shadow: none;
+	background-color: transparent;
+
+	transition: all 0.2s ease-in-out;
+
+	&:focus {
+		outline: none;
+		border-color: $clSecondary;
+		box-shadow: none;
+		background-color: rgba($clShadow, 0.3);
+	}
+
+	&:hover {
+		border-color: $clSecondary;
+	}
 }
+
+input[type="radio"],
+input[type="radio"] ~ label {
+	margin: 20px 5px 20px 5px;
+	&:hover { 
+		cursor: pointer; 
+		color: $clSecondary; 
+	}
+}
+
+label { color: $clPaper; letter-spacing: 1px; font-weight: normal; }

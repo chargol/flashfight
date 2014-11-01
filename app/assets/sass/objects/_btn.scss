@@ -1,0 +1,28 @@
+.btn-default,
+.btn-danger {
+	text-transform: uppercase;
+	color: $clPaper;
+	letter-spacing: 1px;
+	border-color: $clPaper;
+	background-color: transparent;
+
+	&:hover,
+	&:focus {
+		color: $clSecondary;
+		border-color: $clSecondary;
+		background-color: transparent;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+.btn-danger:hover {
+	color: $clDanger;
+	background-color: $clPaper;
+	border-color: $clPaper;
+}	
+
+.btn-block {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}

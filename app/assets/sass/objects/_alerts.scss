@@ -1,0 +1,17 @@
+.alert {
+	// position: absolute;
+	// top: 0; left: 0; right: 0;
+	
+	text-transform: uppercase;
+	letterspacing: 1px;
+	fong-weight: 100;
+	text-align: center;
+
+	border-radius: 0;
+	border: none;
+}
+
+.alert-danger {
+	color: $clPaper;
+	background-color: $clDanger;
+}

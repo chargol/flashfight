@@ -12,9 +12,15 @@
 	
 	<ul class="nav-content-wrapper text-center">
 		<li>
-			<a href="#">
+			<a href="{{ route('member.create') }}">
 				<span class="glyphicon glyphicon-plus"></span>
 				Neuer Teilnehmer
+			</a>
+		</li>
+		<li>
+			<a href="{{ route('point.index') }}">
+				<span class="glyphicon glyphicon-star-empty"></span>
+				Punkte vergeben
 			</a>
 		</li>
 		<li>

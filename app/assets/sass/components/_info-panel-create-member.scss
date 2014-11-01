@@ -1,0 +1,41 @@
+.info-panel-create-member {
+	margin-top: 50px;
+	height: auto;
+	min-height: 100%;
+	background-color: $clFourth;
+
+	h2, h3 {
+		color: $clPaper;
+		font-weight: 100;
+		letter-spacing: 1px;
+		border-radius: 0;
+		background-color: transparent;
+		padding: 0;
+		
+	}
+
+	h2 {
+		margin-bottom: 0;
+		text-transform: uppercase;
+		line-height: 100%;
+	}
+	
+	p {
+		color: $clPaper;
+		padding: 0;
+		margin: 0;
+	}
+
+	.counter p {
+		font-size: 70px;
+		font-weight: 100;
+	}
+
+	.history-member {
+		margin: 3px 0;
+		padding: 5px 0; 
+		background-color: darken($clFourth, 5);
+
+		border-radius: 10px;
+	}
+}
