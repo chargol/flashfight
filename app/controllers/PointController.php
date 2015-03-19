@@ -15,6 +15,21 @@ class PointController extends \BaseController {
 		return View::make('points.index', compact('women', 'men'));
 	}
 
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function best()
+	{	
+		$menAdult = Member::men()->adult()->best()->get();
+		$menYouth = Member::men()->youth()->best()->get();
+		$womenAdult = Member::women()->adult()->best()->get();
+		$womenYouth = Member::women()->youth()->best()->get();
+		
+		return View::make('points.best', compact('menAdult', 'womenAdult', 'menYouth', 'womenYouth'));
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

@@ -21,9 +21,16 @@ Route::post('/punkte/vergeben/{id}', array(
 	'uses' => 'PointController@create' 
 ));
 
+
+
 Route::get('/punkte/vergeben', array(
 	'as' => 'point.index',
 	'uses' => 'PointController@index' 
+));
+
+Route::get('/bestenliste', array(
+	'as' => 'point.best',
+	'uses' => 'PointController@best' 
 ));
 
 Route::delete('/teilnehmer/{id}', array(
@@ -31,12 +38,17 @@ Route::delete('/teilnehmer/{id}', array(
 	'uses' => 'MemberController@destroy' 
 ));
 
+Route::get('/teilnehmer/anmelden', array(
+	'as' => 'member.create',
+	'uses' => 'MemberController@create'
+));
+
 Route::post('/teilnehmer', array(
 	'as' => 'member.store',
 	'uses' => 'memberController@store' 
 ));
 
-Route::get('/', array(
-	'as' => 'member.create',
-	'uses' => 'MemberController@create'
-));
+Route::get('/', function()
+{
+    return Redirect::route('member.create');
+});

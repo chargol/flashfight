@@ -24,7 +24,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="{{ route('point.best') }}">
 				<span class="glyphicon glyphicon-fire"></span>
 				Bestenliste
 			</a>

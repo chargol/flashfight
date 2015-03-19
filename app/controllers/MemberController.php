@@ -50,12 +50,21 @@ class MemberController extends \BaseController {
 	{	
 		$birthdayArray = explode('.', Input::get('birthday'));
 
+
 		if (count($birthdayArray) == 3) {
+			$year = $birthdayArray[2];
+			$month = $birthdayArray[1];
+			$day = $birthdayArray[0];
+			$birthday = $year .'-'. $month .'-'. $day;
+
+			$age = Carbon::createFromDate($year, $month, $day)->age;
+
 			$parsedInput = [
 				'firstname' => Input::get('firstname'),
-				'lastname' => Input::get('lastname'),
-				'gender' => Input::get('gender'),
-				'birthday' => $birthdayArray[2] .'-'. $birthdayArray[1] .'-'. $birthdayArray[0]
+				'lastname'  => Input::get('lastname'),
+				'gender'    => Input::get('gender'),
+				'birthday'  => $birthday,
+				'age'       => $age
 			];
 		} else {
 			Flash::error('Fehlerhafte Daten.');
